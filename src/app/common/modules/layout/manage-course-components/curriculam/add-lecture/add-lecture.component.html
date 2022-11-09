@@ -1,0 +1,15 @@
+<div class="add-lec-container" [ngClass]="{'selected': toggleFlag }">
+  <mat-icon class="add-lec-icon" (click)="toggleContent()">add</mat-icon>
+  <div class="add-lec-btn" (click)="toggleContent()">
+  </div>
+  <div class="add-lec-content" *ngIf="toggleFlag">
+    <div>New Lecture: {{chapterPosition}} : {{position}}</div>
+    <form class="new-lec-form" [formGroup]="form" (submit)="addNewLecture()">
+      <input type="text" formControlName="title">
+      <div class="controls">
+        <button class="cancel-btn" type="button" (click)="cancelHandler()">Cancel</button>
+        <button class="save-btn" type="submit">Add lecture</button>
+      </div>
+    </form>
+  </div>
+</div>

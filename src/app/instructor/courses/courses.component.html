@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="heading-container d-flex justify-content-between py-3">
+    <h1>Courses</h1>
+    <div class="new-course-btn new-course-btn-m">
+      <button [routerLink]='["/library/create"]'>New course</button>
+    </div>
+  </div>
+
+  <div class="filter-container py-5 d-flex justify-content-between">
+    <form class="filter-controls d-flex">
+      <div class="search-container d-flex mr-2">
+        <input class="search-input" type="text">
+        <button class="search-btn">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Sort by</mat-label>
+        <mat-select #mode value="side">
+          <mat-option value="new">Newest</mat-option>
+          <mat-option value="old">Oldest</mat-option>
+          <mat-option value="Most reviewed">Most Reviewed</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <div class="new-course-btn">
+      <button [routerLink]='["/library/create"]'>New course</button>
+    </div>
+  </div>
+
+  <div class="course-list">
+    <div class="course" *ngFor="let course of courses">
+      <div class="course-img-container">
+        <img src="/assets/course-placeholder.jpg" alt="">
+      </div>
+      <div class="course-details-container d-flex">
+        <div class="course-details">
+          <h3 class="course-name">{{course.title}}</h3>
+          <div class="course-visiblity d-flex">
+            <div class="publish-text">Publish</div>
+            <div class="draft-text">Draft</div>
+          </div>
+        </div>
+        <div class="course-progress">
+          <div class="progress-heading">Finish your course</div>
+          <div class="progress-bar-container px-2">
+            <ngb-progressbar type="dark" [value]="100"></ngb-progressbar>
+          </div>
+        </div>
+        <div class="overlay" [routerLink]='"/library/"+course.id+"/manage"'>
+          <h2>Edit / manage course</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

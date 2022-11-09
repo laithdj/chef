@@ -1,0 +1,33 @@
+<div class="card-container" [ngClass]="{'vertical-card': mode==='vertical' , 'horizontal-card': mode!=='vertical'}"
+  (click)="onSelect()">
+  <div class="left">
+    <div class="img-container">
+      <img [src]="image" onerror="this.src='/assets/placeholder.jpg'" alt=""
+        class="img">
+    </div>
+
+    <div class="card-details">
+      <h1> {{data?.title}}</h1>
+      <div *ngIf=' mode==="vertical"' class="descreption">
+        {{data?.subtitle}}
+      </div>
+      <p class="author">{{data?.author}}</p>
+      <!-- <div>
+        <span class="rating">
+          3.4
+        </span>
+        <ngb-rating class="rating" [max]="5" [rate]="3.4"></ngb-rating>
+        <span class="reviews">(1500)</span>
+      </div > -->
+          <!-- <ul *ngIf=' mode==="vertical"' class="course-length">
+              <li>2.5 hour</li>
+              <li>26 lectures</li>
+              <li>All levels</li>
+          </ul> -->
+    </div>
+  </div>
+
+  <!-- <div class="price">
+    {{"380" | currency}}
+  </div> -->
+</div>

@@ -1,0 +1,46 @@
+<div class="main-container w-100">
+  <div class="header d-flex justify-content-between align-items-center px-4 py-2 bg-dark w-100">
+    <div class="header-left d-flex align-items-center">
+      <a class="back-btn" [routerLink]="['/instructor/courses']">
+        <mat-icon>keyboard_arrow_left</mat-icon>Back to courses
+      </a>
+
+    </div>
+
+    <div class="header-right d-flex align-items-center">
+      <button class="save-btn" (click)="save()" [disabled]="isInvalid()">
+        Save
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="main-content">
+    <div class="side-nav">
+      <label for="toggler" class="hamburger">
+        <mat-icon>menu</mat-icon>
+      </label>
+      <input class="toggler" id="toggler" type="checkbox">
+      <ul class="menu-container" id="menu-container">
+        <li class="menu-set" *ngFor="let n of NAVBAR">
+          <div class="menu-heading">
+            {{n.heading}}
+          </div>
+          <ul class="menu">
+            <li class="menu-item" *ngFor="let sm of n.options" [routerLink]="[sm.url]"
+              [routerLinkActive]="['activeLink']">
+              <span></span>
+              <a>{{sm.name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- <button class="review-course-btn">Submit for review</button> -->
+    </div>
+    <div class="content-section">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

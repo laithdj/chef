@@ -1,0 +1,11 @@
+    <div class="course-title-form">
+      <h1 class="title-form-heading">How about a working title?</h1>
+
+      <p class="title-form-description">It's ok if you can't think of a good title now. You can change it later.</p>
+      <form [formGroup]="titleForm" class="title-input-form">
+        <label class="title-input-container">
+          <input type="text" formControlName="title" maxlength="60">
+          <span>60</span>
+        </label>
+      </form>
+    </div>

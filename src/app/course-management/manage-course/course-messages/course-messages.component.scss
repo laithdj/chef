@@ -1,0 +1,41 @@
+@import '../shared/genral-style.scss';
+.main-container{
+    .main-content{
+        padding-right: 4rem;
+        .msg-container{
+            // position: relative;
+            width: auto;
+            h2{
+                font-size: medium;
+                font-weight: bold;
+            }
+            label{
+                width: 100%;
+                position: relative;
+            }   
+            textarea{
+                width: 100%;
+                padding: 1rem 4rem 1rem 1rem;
+                resize: vertical;
+                &:focus{
+                    outline: 0;
+                }
+            }
+            span{
+                position: absolute;
+                top: 3rem;
+                right: 1rem;
+                color: gray;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 890px) {
+  .main-container {
+    .main-content {
+      padding: 3rem 1.5rem;
+    }
+  }
+}

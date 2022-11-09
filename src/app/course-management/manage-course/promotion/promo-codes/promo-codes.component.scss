@@ -1,0 +1,155 @@
+@import "../../shared/genral-style.scss";
+
+
+.main-container {
+  
+  .main-content {
+    h2 {
+      font-size: large;
+      font-weight: bold;
+      }
+    h3{
+        font-size: medium;
+        font-weight: bold;
+      }
+    .filter-container::ng-deep {
+      .search-container {
+        height: 3rem;
+        margin-right: 1rem;
+    
+        .search-input {
+          outline: none;
+          padding: 0.5rem;
+          &:focus {
+            outline: none;
+          }
+        }
+    
+        .search-btn {
+          padding: 0.3rem 0.5rem;
+          border: none;
+          background-color: black;
+          color: white;
+        }
+      }
+      .new-coupen-btn {
+        button {
+          background-color: #a435f0;
+          border: none;
+          padding: 0.8rem;
+          color: white;
+          margin-left: 38rem;
+          // margin-right: 0rem;
+        }
+      } 
+  }
+}
+}
+
+
+
+.coupen-list {
+
+  
+  .coupen {
+    display: flex;
+    width: 70rem;
+    flex: 1;
+    height: 8rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba($color: #000000, $alpha: 0.1);
+    .coupen-details-container {
+      position: relative;
+      display: flex;
+      flex: 1;
+
+      &:hover {
+        .overlay {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+      .coupen-details {
+        width: 30%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .coupen-name {
+          font-size: medium;
+          font-weight: bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .publish-text {
+        margin-right: 0.4rem;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba($color: white, $alpha: 0.9);
+        h2 {
+          color: #a435f0;
+          font-size: large;
+          font-weight: bold;
+        }
+      }
+      .coupen-progress {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        .progress-heading{
+            font-size: medium;
+            font-weight: bold;
+        }
+        .progress-bar-container {
+          flex: 1;
+          min-width: 50%;
+
+          .progress {
+            height: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .heading-container {
+    .new-coupen-btn-m {
+      display: block;
+    }
+  }
+
+  .filter-container {
+    flex: 1;
+    .filter-controls {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .new-coupen-btn {
+      display: none;
+    }
+  }
+
+  .coupen-details-container {
+    .coupen-details {
+      width: 100% !important;
+    }
+    .coupen-progress {
+      display: none !important;
+    }
+  }  
+}
+

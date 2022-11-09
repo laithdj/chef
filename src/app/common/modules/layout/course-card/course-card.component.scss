@@ -1,0 +1,122 @@
+.card-container{
+  cursor: pointer;
+}
+.vertical-card::ng-deep {
+  display: flex;
+  flex: 1;
+  min-width: 50rem;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(black, 0.1);
+  padding: 1rem 0;
+
+  .left {
+    display: flex;
+  }
+
+  .card-details {
+    padding: 0.3rem;
+  }
+
+  h1 {
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+  }
+  .descreption {
+    font-size: medium;
+  }
+  .img-container {
+    height: 9rem;
+    position: relative;
+    &:hover:after {
+      opacity: 0.4;
+    }
+    &:after {
+      content: "\A";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+
+      &:hover {
+        opacity: 0.8;
+        border: 1px solid rgba($color: #000000, $alpha: 0.5);
+      }
+    }
+  }
+}
+
+.horizontal-card::ng-deep {
+  margin: 0.2rem;
+
+  h1 {
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .img-container {
+    height: 7.5rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.img {
+  height: 100%;
+  object-fit: contain;
+
+  transition: opacity ease-in-out 0.2s;
+  -webkit-transition: opacity ease-in-out 0.2s;
+  -moz-transition: opacity ease-in-out 0.2s;
+  -ms-transition: opacity ease-in-out 0.2s;
+  -o-transition: opacity ease-in-out 0.2s;
+}
+
+.author {
+  font-size: smaller;
+}
+
+ul::ng-deep {
+  padding-left: 0.2rem;
+}
+
+.course-length li::ng-deep {
+  list-style: none;
+  float: left;
+  padding: 0;
+  font-size: x-small;
+  opacity: 0.5;
+}
+
+.course-length li:not(:first-child):before {
+  content: "\2022";
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+p,
+.reviews {
+  font-size: small;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.rating {
+  color: rgb(187, 110, 10);
+}
+
+.price {
+  font-weight: bold;
+  font-size: medium;
+}

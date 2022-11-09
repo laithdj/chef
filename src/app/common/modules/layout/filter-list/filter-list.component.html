@@ -1,0 +1,14 @@
+ <div class="fileter-list-container">
+   <app-expanable-container>
+     <div *ngFor="let f of filters" class="filter-item">
+       <label class="flter-label">
+         <div class="fake-checkbox-container">
+           <input type="checkbox">
+           <span class="checkmark"></span>
+         </div>
+         {{f.name}}
+         <span>(8)</span>
+       </label>
+     </div>
+    </app-expanable-container>
+ </div>

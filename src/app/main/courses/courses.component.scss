@@ -1,0 +1,122 @@
+.main-container{
+  max-width: 1440px;
+}
+.header {
+  h1 {
+    font-weight: bold;
+    font-size: xx-large;
+  }
+
+  h3 {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: medium;
+    font-weight: bolder;
+  }
+}
+
+.header-description > * {
+  margin: 0.8rem 0;
+}
+
+.comma:not(:first-child, :nth-child(2)):before {
+  content: ", ";
+}
+
+.filter-controls {
+  display: flex;
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  .mat-raised-button {
+    height: 73%;
+    margin-right: 0.5rem;
+  }
+}
+
+.mat-form-field-appearance-fill::ng-deep .mat-form-field-flex::ng-deep {
+  background-color: white;
+}
+
+ngb-accordion::ng-deep {
+  .accordion-item:first-child {
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+  }
+
+  .accordion-item {
+    border: 0;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  }
+  .accordion-button {
+    border-radius: 0;
+    font-weight: bold;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: black;
+    background-color: white;
+    box-shadow: none;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+}
+
+.mat-form-field-appearance-fill::ng-deep .mat-form-field-flex::ng-deep,
+.mat-raised-button {
+  border: 1px solid black;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.mat-raised-button {
+  box-shadow: none;
+}
+
+.result-count {
+  opacity: 0.8;
+}
+
+.mat-drawer {
+  width: 15rem;
+}
+
+.mat-drawer-side {
+  border: none;
+}
+
+.mat-drawer-content {
+  background-color: white;
+}
+
+.accordion-button::ng-deep {
+  font-weight: bold;
+  background-color: red;
+}
+
+.students-choice-list {
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+@mixin spacer {
+  position: fixed;
+  top: 0;
+}
+.spacer {
+  @include spacer;
+}
+
+.sidenav-container::ng-deep {
+  .mat-drawer-backdrop {
+    @include spacer;
+  }
+}

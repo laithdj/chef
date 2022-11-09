@@ -1,0 +1,118 @@
+.lecture-container {
+  .lecture {
+    margin-top: 2rem;
+    border: 1px solid black;
+    background-color: white;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    &:hover {
+      .lec-head-container {
+        .lec-head-right {
+          .reorder-btn,.lec-del-btn {
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+    .lec-head-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      .lec-head-left {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+      }
+      .lec-head-right {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        button {
+          display: flex;
+          align-items: center;
+          background-color: transparent;
+          border: 1px solid black;
+          padding: 0.5rem 1rem 0.5rem 0.5rem;
+          font-weight: bold;
+        }
+        .reorder-btn,.lec-del-btn {
+          opacity: 0;
+          cursor: pointer;
+        }
+        
+      }
+      mat-icon {
+        font-size: large;
+        height: unset;
+      }
+    }
+
+    .lec-content {
+      border-top: 1px solid black;
+      position: relative;
+      padding: 2rem;
+
+      .lec-content-head {
+        position: absolute;
+        bottom: 100%;
+        right: 3rem;
+        margin-bottom: -1px;
+        background-color: white;
+        display: flex;
+        gap: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid lightgray;
+        border-bottom: 0;
+        button {
+          background-color: transparent;
+          border: 0;
+          mat-icon {
+            cursor: pointer;
+          }
+        }
+      }
+      .content-input-container {
+        display: flex;
+        flex: 1;
+        border: 1px solid black;
+
+        div {
+          flex: 1;
+          .file-input {
+            width: 100%;
+            min-width: 12rem;
+            padding: 0.5rem 1rem;
+            background-color: rgb(243, 243, 243);
+            height: 100%;
+            &::file-selector-button {
+              display: none;
+            }
+          }
+        }
+        button {
+          border: 0;
+          background-color: white;
+          padding: 0.5rem 1rem;
+          border-left: 1px solid black;
+          font-weight: bold;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+      }
+
+      .loading-box {
+        width: 100%;
+        padding-top: 1rem;
+      }
+
+      .content-box {
+        .media-del-btn {
+          outline: none;
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}

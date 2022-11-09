@@ -1,0 +1,31 @@
+<div class="course-type-form">
+  <h1 class="type-container-heading">First, let's find out what type of course you're making.</h1>
+  <form [formGroup]="typeForm" class="course-type-choices d-flex justify-content-center">
+    <label class="course-option mr-1">
+      <input class="course-option-input" formControlName="type" type="radio" value="course">
+      <span class="course-type-container">
+        <div class="type-option-icon">
+          <mat-icon>video_label</mat-icon>
+        </div>
+        <h5 class="type-option-heading">Course</h5>
+        <p class="type-option-details">Create rich learning experiences with your cooking , and split your course into multiple clips for better learning.
+        </p>
+      </span>
+    </label>
+<!-- 
+    <label class="test-option">
+      <input class="test-option-input" formControlName="type" type="radio" value="practice">
+      <span class="course-type-container">
+        <div class="type-option-icon">
+          <mat-icon> list_alt</mat-icon>
+        </div>
+        <h5 class="type-option-heading">Practice test</h5>
+        <p class="type-option-details">Help students prepare for certification exams by providing practice
+          questions.
+        </p>
+      </span>
+    </label>
+-->
+
+  </form>
+</div>

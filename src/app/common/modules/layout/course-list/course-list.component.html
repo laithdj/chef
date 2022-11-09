@@ -1,0 +1,8 @@
+<div class="course-list-container">
+  <swiper [config]="config">
+  <ng-template swiperSlide *ngFor="let n of courses">
+    <app-course-card [data]="n"></app-course-card>
+  </ng-template>
+  </swiper>
+
+</div>

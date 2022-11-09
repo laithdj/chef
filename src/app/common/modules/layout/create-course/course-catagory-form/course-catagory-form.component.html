@@ -1,0 +1,12 @@
+    <div class="course-catagory-form">
+      <h1 class="catagory-form-heading">What category best fits the knowledge you'll share?</h1>
+
+      <p class="catagory-form-description">If you're not sure about the right category, you can change it later.</p>
+      <form [formGroup]="catagoryForm" class="catagory-input-form">
+        <select formControlName="catagory">
+          <option>Choose a catagory</option>
+          <option *ngFor="let c of catagories" value="{{c.shortNm}}">{{c.title}}</option>
+
+        </select>
+      </form>
+    </div>

@@ -1,0 +1,225 @@
+<header class="header-container">
+  <div class="web-header" [ngClass]="{'d-none': (isHandset$ | async) }">
+    <div class="logo-container">
+      <a [routerLink]="['']" ><img src="./../../../../../assets/mychefologo.png" height="60" width="180" /></a>
+      
+    </div>
+    <!--
+
+    <div class="catagories">
+      Catagories
+      <div class="list-opener"></div>
+      <div class="catgories-container">
+        <ul class="menu">
+          <li class="catagory-option" *ngFor="let c of catagoiries; let i = index" (mouseover)='openSubmenu(i)'
+            [ngClass]="{'selected-nav-option': submenuIndex===i}">
+            <div>{{c.title}}</div>
+          </li>
+        </ul>
+        <ul *ngIf="submenuIndex!==-1" class="menu">
+          <li class="catagory-option" *ngFor="let c of catagoiries[submenuIndex].subcatagories; let i = index"
+            (mouseover)=' openInnerSubmenu(i)' [ngClass]="{'selected-nav-option': innerSubmenuIndex===i}">
+            <div>{{c.title}}</div>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </li>
+        </ul>-->
+        <!-- inner menu
+        <ul *ngIf="innerSubmenuIndex!==-1" class="menu">
+          <li *ngFor="let c of catagoiries[submenuIndex].childrens[innerSubmenuIndex].childrens; let i = index"
+            class="catagory-option">
+            <div>{{c.name}}</div>
+          </li>
+        </ul> -
+
+      </div>-
+
+    </div>
+    -->
+
+    <div class="spacer"></div>
+
+    <div class="search-container">
+      <mat-icon>search</mat-icon>
+      <input #id id="typeahead-http" type="text" (selectItem)="searchItem($event)" (keyup.enter)="onEnter(id.value)"
+        [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search"
+        placeholder="Search for anything" />
+    </div>
+
+    <!-- <div class="cart-container"></div> -->
+    <button *ngIf="(user | async)"[routerLink]="['instructor']" class="signup-btn i-btn">Create a Course</button>
+
+
+
+    <!-- <button class="cart-btn transparent-btn">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button> -->
+
+    <button *ngIf="!(user | async)" [routerLink]="['/auth/login']" class="login-btn h-btn"> Login</button>
+    <button *ngIf="!(user | async)" [routerLink]="['/auth/signup']" class="signup-btn h-btn">Signup</button>
+
+
+    <!-- <div *ngIf="(user | async)" class="notification-container pt-2">
+      <mat-icon>notifications_none</mat-icon>
+      <span class="notif-popup">
+        <div class="d-flex justify-content-between p-2" style="border-bottom: 1px solid rgb(0,0,0 , 0.05);">
+          <div>Notifications</div>
+          <mat-icon>settings</mat-icon>
+        </div>
+        <div class="p-4">
+          <div>No notification</div>
+        </div>
+      </span>
+    </div> -->
+    <div *ngIf="(user | async)" class="header-avatar avatar avatar-popup-container">
+      <img src="/assets/profile-img.png" alt="">
+      <span class="avatar-popup">
+        <a class="d-flex">
+          <div class="avatar">
+            <img src="/assets/profile-img.png" alt="">
+          </div>
+          <span class="ml-1 pt-2">
+            <!-- <div>Muhammad Ahmad</div> -->
+            <div> {{loggedUser?.name}} </div>
+            <!-- <p>mahmadd.z1999@gmail.com</p> -->
+            <p> {{loggedUser?.email}} </p>
+          </span>
+        </a>
+        <a (click)="openDialog()" style="cursor: pointer ;">Public Profile</a>
+        <a [routerLink]="['student']">Student Dashboard</a>
+        <!-- <a href="">Payout & Tax settings</a> -->
+        <hr>
+        <!-- <a href="">Logout</a> -->
+        <button mat-button (click)="onLogout()">Logout</button>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="m-header d-flex justify-content-between align-items-center p-3"
+    [ngClass]="{'d-none': !(isHandset$ | async) }">
+    <button class="menu-toggle-btn transparent-btn" (click)="toggleHandsetMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="logo-container">My Chefo</div>
+    <div class="header-right">
+      <button (click)="toggleHandsetSearch()" class="search-btn transparent-btn">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button class="cart-btn transparent-btn">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="m-search-container popup" [ngClass]=" {'popup-open' : showHandsetSearch && (isHandset$ | async)}">
+    <div class="search-container mt-2">
+      <mat-icon>search</mat-icon>
+      <input #id id="typeahead-http" type="text" (selectItem)="searchItem($event)"
+        (keyup.enter)="onEnter(id.value)"
+        [class.is-invalid]="searchFailed" [editable]='true' [ngbTypeahead]="search"
+        placeholder="Search for anyhting" />
+      <mat-icon (click)="toggleHandsetSearch()" class="close-btn">close</mat-icon>
+
+    </div>
+  </div>
+
+  <div class="popup backdrop" (click)="toggleHandsetMenu()"
+    [ngClass]=" {'popup-open' : showHandsetMenu && (isHandset$ | async)}">
+  </div>
+
+
+  <div class="m-sidenav m-menu" [ngClass]=" {'d-none' : !(showHandsetMenu && (isHandset$ | async))}">
+    <ul *ngIf="!(user | async)">
+      <li><a class="m-nav-option m-links" [routerLink]="['/auth/login']">Login</a></li>
+      <li><a class="m-nav-option m-links" [routerLink]="['/auth/signup']">Signup</a></li>
+    </ul>
+    <ul *ngIf="(user | async)">
+      <li>
+        <a class="m-profile-link d-flex justify-content-between align-items-center pb-1"
+          (click)="showHandsetProfileMenu()">
+          <div class="d-flex">
+            <div class="avatar">
+              <img src="/assets/profile-img.png" alt="">
+            </div>
+            <div class="m-profile-name-container">
+              <div class="m-profile-name">
+                Hello, {{loggedUser?.name}}
+              </div>
+              <p>Wellcome back</p>
+            </div>
+          </div>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </a>
+        <ul class="m-menu float-menu m-submenu" [ngClass]="{ 'm-dsiplay-nav': toggleHandsetProfile }">
+          <li class="m-nav-backbtn" (click)="hideHandsetProfileMenu()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+            <div>Menu</div>
+            <div class="spacer"></div>
+          </li>
+          <li class="m-nav-option">Option 2</li>
+          <li class="m-nav-option">Option 3</li>
+          <li class="m-nav-option">Option 4</li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <hr *ngIf="(user | async)" class="divider">
+    <a *ngIf="(user | async)" [routerLink]="['instructor']" class="m-nav-option">Instructor</a>
+
+
+    <hr class="divider">
+    <div class="nav-heading">
+      Most popular
+    </div>
+    <!-- main list -->
+    <ul *ngFor="let c of catagoiries; let i = index">
+      <!-- print name/opener of main list -->
+      <li (click)="setSubmenuIndex(i)"><a class="m-nav-option">
+          <div>{{c.title}}</div>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </a>
+      </li>
+      <!-- submenu list -->
+      <ul class="m-menu float-menu m-submenu" [ngClass]="{ 'm-dsiplay-nav': submenuIndex===i }">
+        <!-- close btn -->
+        <li class="m-nav-backbtn" (click)="closeSubmenu()">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+          <div>{{c.title}}</div>
+          <div class="spacer"></div>
+        </li>
+        <!--submenu -->
+        <li *ngFor="let cc of c.subcatagories; let j=index">
+          <!-- submenu name/opener -->
+          <a (click)="setInnerSubmenuIndex(j)" class="m-nav-option">
+            <div>{{cc.title}}</div>
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </a>
+          <!-- inner submenu container -->
+          <!-- <ul class="m-menu float-menu m-inner-submenu" [ngClass]="{ 'm-dsiplay-nav': innerSubmenuIndex===j }">
+            back btn to main menu
+            <li class="m-nav-backbtn" (click)="closeSubMenues()">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+              <div>{{c.title}}</div>
+              <div class="spacer"></div>
+            </li>
+            backe btn to submenu
+            <li class="m-nav-backbtn" (click)="closeInnerMenu()">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+              <div>{{cc.title}}</div>
+              <div class="spacer"></div>
+            </li>
+            inner submenu options
+            <li *ngFor="let ccc of cc.subcatagories;"><a class="m-nav-option">
+                <div>{{ccc.title}}</div>
+              </a> </li>
+          </ul> -->
+        </li>
+      </ul>
+    </ul>
+
+
+  </div>
+
+</header>

@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="sub-header">
+    {{title}}
+  </div>
+  <div class="subtitle-panel">
+    <div class="subtitle-left">
+      <h2>{{subtitleHeading}}</h2>
+      <p >{{subtitleDescription}}</p>
+    </div>
+    <div class="subtitle-right">
+      <img src="{{cardImgPath}}" alt="">
+      <div>
+        <h2>{{cardHeading}}</h2>
+        <p>{{cardDescription}}</p>
+      </div>
+      <div class="article-btn-container">
+        <a [routerLink]="[subtitleBloglink]">
+          {{cardBtnTitle}}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <ng-content></ng-content>
+  </div>
+</div>

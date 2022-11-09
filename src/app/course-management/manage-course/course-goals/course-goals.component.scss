@@ -1,0 +1,63 @@
+@import "../shared/genral-style.scss";
+
+.question-form {
+  .question-list {
+    margin-bottom: 1.5rem;
+    .question-heading {
+      font-size: medium;
+      font-weight: bold;
+    }
+    .question-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 3rem;
+      margin-bottom: 1rem;
+      .question {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        border: 1px solid black;
+        padding: 0 0.5rem;
+        height: 100%;
+
+        input {
+          flex: 1;
+          padding: 0.5rem;
+          outline: 0;
+          border: none;
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+      .question-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25rem 0.5rem;
+        height: 100%;
+        opacity: 0;
+        box-sizing: border-box;
+        border: 1px solid black;
+        // pointer-events: none;
+        cursor: pointer;
+      }
+
+      &:hover > .question-action {
+        opacity: 1;
+      }
+    }
+    .add-question-btn {
+      height: 3rem;
+      border: none;
+      background: transparent;
+      color: #5624d0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      font-weight: bold;
+    }
+  }
+}

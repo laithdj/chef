@@ -1,0 +1,56 @@
+<div class="main-container">
+  <div class="sub-header">
+    Curriculum
+  </div>
+  <div class="main-content">
+    <p>
+      If you’re intending to offer your course for free, the total length of video content must be less than 2 hours
+    </p>
+
+    <div class="chapter-container">
+      <!-- chapter -->
+      <!-- add chapter before all chapters -->
+      <add-chapter [position]="0" [courseId]="courseId" (newChapter)="newChapterHandler($event)"></add-chapter>
+      <ng-container *ngFor="let ch of chapters; let i=index">
+
+        <div class="chapter">
+
+          <div class="chapter-head">
+            <div class="chapter-head-left">
+              <h3>
+                Chapter {{i+1}}:
+              </h3>
+              <div class="chapter-name">
+                <mat-icon>description</mat-icon>
+                <span>{{ch.title}}</span>
+              </div>
+              <button>
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button>
+                <mat-icon (click)="deleteChapter(i)">delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+
+
+          <div class="lecture-list-container mt-3">
+            <!-- add lecture at first position -->
+            <add-lecture (newLecture)="newLectureHandler($event)" [courseId]="courseId" [chapterId]="ch.id" [chapterPosition]="i"
+              [position]="0"></add-lecture>
+            <ng-container *ngFor="let lec of ch.lectures; let j=index">
+              <lecture-entry (delete)="deleteLectureHandler($event)" [data]="lec" [position]="j" [chapterPosition]="i"></lecture-entry>
+              <!-- add lecture after each lecture -->
+              <add-lecture (newLecture)="newLectureHandler($event)" [courseId]="courseId" [chapterId]="ch.id"
+                [chapterPosition]="i"[position]="j+1"></add-lecture>
+
+            </ng-container>
+          </div>
+        </div>
+        <!-- add chapter after each chapter -->
+        <add-chapter [position]="i+1" [courseId]="courseId" (newChapter)="newChapterHandler($event)"></add-chapter>
+
+      </ng-container>
+    </div>
+  </div>
+</div>

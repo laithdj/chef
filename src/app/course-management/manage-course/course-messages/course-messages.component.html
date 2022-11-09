@@ -1,0 +1,34 @@
+<div class="main-container">
+  <div class="sub-header">
+    Course messages
+  </div>
+  <div class="main-content">
+    <p>
+      Write messages to your students (optional) that will be sent automatically when they join or complete your course
+      to
+      encourage students to engage with course content. If you do not wish to send a welcome or congratulations message,
+      leave
+      the text box blank. </p>
+
+    <form [formGroup]="messageForm">
+      <div class="msg-container">
+        <label>
+          <h2>Welcome Message</h2>
+          <textarea name="welcome-msg" id="welcome-msg" rows="4" maxlength="1000" formControlName="welcome"></textarea>
+          <span>1000
+          </span>
+        </label>
+      </div>
+      <div class="msg-container mt-5">
+        <label>
+          <h2>Congratulations Message
+          </h2>
+          <textarea name="welcome-msg" id="welcome-msg" rows="4" maxlength="1000" formControlName="congrats"></textarea>
+          <span>1000
+          </span>
+        </label>
+      </div>
+    </form>
+
+  </div>
+</div>

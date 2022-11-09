@@ -1,0 +1,100 @@
+export default [
+  {
+    name: 'Profile',
+    url: '/',
+    isExpanable: true,
+    subOptions: [
+      { name: 'Public profile', url: '' },
+      { name: 'Udemy profile', url: '' },
+      { name: 'profile picture', url: '' },
+      { name: 'Privacy settings', url: '' },
+    ],
+  },
+  {
+    name: 'Courses',
+    url: 'courses',
+    isExpanable: false,
+    subOptions: [],
+  },
+  {
+    name: 'Communication',
+    url: 'communication',
+    icon: 'insert_comment',
+    isExpanable: true,
+    subOptions: [
+      { name: 'Q&A' },
+      { name: 'Messages' },
+      { name: 'Assingnments' },
+      { name: 'Announcements' },
+    ],
+  },
+  {
+    name: 'Performance',
+    url: 'performance',
+    icon: 'bar_chart',
+    isExpanable: true,
+    subOptions: [
+      { name: 'Overview' },
+      { name: 'Students' },
+      { name: 'Reviews' },
+      { name: 'Course engagement' },
+      { name: 'Traffic & conversion' },
+    ],
+  },
+  {
+    name: 'Tools',
+    url: 'tools',
+    icon: 'settings',
+    isExpanable: true,
+    subOptions: [
+      { name: 'Test Video', url: '' },
+      { name: 'Marketplace Insights', url: '' },
+    ],
+  },
+  {
+    name: 'Resources',
+    url: 'resources',
+    icon: 'help_outline',
+    isExpanable: true,
+    subOptions: [
+      { name: 'Teaching Center', url: '' },
+      { name: 'Instructor Community', url: '' },
+      { name: 'Help and Support', url: '' },
+    ],
+  },
+  {
+    name: 'Notifications',
+    url: 'resources',
+    isExpanable: false,
+    subOptions: [],
+  },
+  {
+    name: 'Account',
+    url: 'resources',
+    isExpanable: true,
+    subOptions: [
+      { name: 'Account security', url: '' },
+      { name: 'Notification settings', url: '' },
+      { name: 'API clients', url: '' },
+      { name: 'Close account', url: '' },
+    ],
+  },
+  {
+    name: 'Payout & Tax settings',
+    url: 'resources',
+    isExpanable: false,
+    subOptions: [],
+  },
+  {
+    name: 'Get the app',
+    url: 'resources',
+    isExpanable: false,
+    subOptions: [],
+  },
+  {
+    name: 'Logout',
+    url: 'resources',
+    isExpanable: false,
+    subOptions: [],
+  },
+];

@@ -1,0 +1,36 @@
+  .course-title-form {
+    text-align: center;
+    width: 42rem;
+    .title-form-heading {
+      font-size: x-large;
+      font-family: 'Libre Bodoni', serif;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .title-form-description {
+      margin-bottom: 3rem;
+    }
+    .title-input-form {
+      width: 100%;
+      .title-input-container {
+        width: 100%;
+        height: 3rem;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.2rem 1rem;
+        input {
+          outline: 0;
+          border: 0;
+          width: 90%;
+          &:focus {
+            outline: 0;
+          }
+        }
+        span {
+          opacity: 0.7;
+        }
+      }
+    }
+  }

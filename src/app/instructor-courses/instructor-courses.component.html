@@ -1,0 +1,387 @@
+<div class="container">
+  <br>
+    <div class="heading-container d-flex justify-content-between py-3">
+      <h1 id="name">{{author }}'s channel</h1> 
+    </div>
+  
+    <div class="filter-container py-5 d-flex justify-content-between">
+      <form class="filter-controls d-flex">
+        <div class="search-container d-flex mr-2">
+          <input class="search-input" type="text">
+          <button class="search-btn">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Sort by</mat-label>
+          <mat-select #mode value="side">
+            <mat-option value="new">Newest</mat-option>
+            <mat-option value="old">Oldest</mat-option>
+            <!-- <mat-option value="Most reviewed">Most Reviewed</mat-option> -->
+          </mat-select>
+        </mat-form-field>
+      </form> 
+      <!-- <div class="new-course-btn">
+        <button [routerLink]='["/library/create"]'>New course</button>
+      </div> -->
+    </div>
+  
+    <div class="course-list">
+      <h3>Upload Courses</h3>
+      <div class="course" *ngFor="let course of iCourse">
+        
+        <div class="course-img-container">
+          <img src="/assets/course-placeholder.jpg" alt="">
+        </div>
+        <div class="course-details-container d-flex">
+          <div class="course-details">
+            <h3 class="course-name">{{course.title}}</h3>
+            <div class="course-visiblity d-flex">
+              <div class="publish-text">Publish</div>
+            
+            </div>
+          </div>
+          <div class="course-progress">
+           
+          </div>
+          <div class="overlay" [routerLink]='"/main/course/"+ course.id'>
+            <h2>Click to navigate to your course</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <router-outlet></router-outlet>
+  </div>
+            
+  
+  
+  <!-- <div>
+      <div class="title-header d-flex bg-dark px-3 pt-2">
+          <div>
+              <h1>{{course?.title}}</h1>
+              <div>
+                  <span class="rating">
+                      3.4
+                  </span>
+                  <ngb-rating class="rating" [max]="5" [rate]="3.4"></ngb-rating>
+                  <span class="reviews">(1500)</span>
+              </div>
+          </div>
+      </div>
+      <div class="main-container" style="min-height: 200vh;">
+          <div class="course-info-section bg-dark py-4">
+              <div>
+                  <h1>
+                      {{course?.title}}
+                  </h1>
+                  <p>
+                      {{course?.subtitle}}
+                  </p> -->
+  
+                  <!-- <div>
+              <span class="rating">
+                3.4
+              </span>
+              <ngb-rating class="rating" [max]="5" [rate]="3.4"></ngb-rating>
+              <span class="reviews">(1500)</span>
+            </div> -->
+  
+                  <!-- <p>Created by <a href="#">{{course?.author}}</a></p>
+              </div>
+              <div class="d-flex">
+                  <span class="course-internal-details">
+                      <mat-icon>report</mat-icon> Last updated {{course?.updatedAt | date: 'dd/MM/yyyy'}}
+                  </span>
+                  <span class="course-internal-details">
+                      <mat-icon>language</mat-icon> {{course?.language}}
+                  </span>
+                  <span class="course-internal-details">
+                      <mat-icon>closed_caption</mat-icon> []
+                  </span>
+              </div>
+  
+  
+              <div class="cart-card" [ngClass]="{'floating-cart' : scrolled}">
+                  <h3>Subcription includes</h3>
+                  <span class="stats-list"> -->
+                      <!-- <div class="review-item">
+                          <mat-icon>ondemand_video</mat-icon>
+                          {{lectures}} video lectures
+                      </div>
+                      <div class="review-item">
+                          <mat-icon>library_books</mat-icon>
+                          747791 Reviews
+                      </div>
+                      <div class="review-item">
+                          <mat-icon>people</mat-icon>
+                          10292828 Students subcribed
+                      </div>
+  
+                  </span>
+  
+  
+              </div>
+          </div>
+  
+          <div class="main-section">
+              <div class="outcomes">
+                  <div class="outcomesheader">
+                      <h1>What tou'll learn</h1>
+                      <ul>
+                          <li *ngFor="let w of course?.goals?.what_you_will_learn">
+                              {{w}}
+                          </li>
+  
+                      </ul>
+                  </div>
+              </div>
+  
+  
+  
+              <div class="course-content-section">
+                  <h1>
+                      Course Content
+                  </h1>
+                  <div class="course-content-header d-flex justify-content-between">
+                      <ul>
+                          <li>{{chapters}} section</li>
+                          <li>{{lectures}} lectures</li>
+                      </ul> -->
+  
+                      <!-- <a href="#">Expand all sections</a> -->
+                  <!-- </div>
+                  <div class="course-content-details">
+                      <ngb-accordion #acc="ngbAccordion">
+                          <ngb-panel *ngFor="let ch of course?.curriculam; let i=index" id="toggle-{{i}}"
+                              title="{{ch.title}}">
+                              <ng-template ngbPanelContent>
+                                  <div *ngFor="let lec of ch.lectures"
+                                      class="lecture-entry d-flex justify-content-between">
+                                      <div class="d-flex align-item-center">
+                                          <mat-icon>play_arrow</mat-icon>
+                                          <div class="ml-3">{{lec.title}}</div>
+                                      </div>
+                                      <p><a class="play-btn" (click)="playVideo(lec)">play</a></p>
+                                  </div>
+                              </ng-template>
+                          </ngb-panel>
+                      </ngb-accordion>
+                  </div>
+              </div>
+  
+              <div class="requirements-section">
+                  <h1>Requirements</h1>
+                  <ul>
+                      <li *ngFor="let req of course?.goals?.requirements">{{req}}</li>
+                  </ul>
+              </div>
+  
+              <div class="description-container">
+                  <h1>Description</h1> -->
+  
+                  <!-- <app-expanable-container> -->
+                      <!-- <p [innerHtml]="course?.description"> -->
+                          <!-- {{course?.description}} -->
+  
+                      <!-- </p> -->
+  
+                  <!-- </app-expanable-container> -->
+  
+              <!-- </div> -->
+  
+              <!-- <div class="featured-review">
+            <h1>Feature review</h1>
+            <div class="reviewer-details">
+                <div class="reviewer-img">
+                  <img src="" alt="">
+                </div>
+    
+                .revier
+            </div>
+            <div class="rating">
+    
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit illum, sed laudantium placeat et,
+              mollitia reiciendis quia facere neque nobis incidunt. Ipsam, autem? Molestiae inventore officia reiciendis
+              voluptate delectus?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quasi blanditiis ullam officiis sed quo, sit,
+              ratione ipsam ut, quae architecto voluptatum modi sequi eaque recusandae quos fugit tempore eius?
+            </p>
+    
+            <div class="featured-review-actions">
+              <div class="review-action-heading">
+    
+              </div>
+              <div class="review-action-list">
+    
+              </div>
+            </div>
+    
+    
+          </div> -->
+  
+  
+              <!-- <div class="instructor-info-section">
+            <h1>Instructor</h1>
+            <div class="instructor-details">
+              <div class="instructor-name">
+                <h1><a href="#">Tom jack</a></h1>
+              </div>
+              <p class="instructor-short-descriotion">
+                Professional Web Developer and Instructor
+              </p>
+    
+              <div class="instructor-stats-container mb-2">
+                <div class="instructor-img ">
+                  <img src="./assets/profile-img.png" alt="" class="rounded-img">
+                </div>
+                <span class="stats-list">
+                  <div class="instructor-rating review-item">
+                    <mat-icon>star</mat-icon>
+                    4.7 Instructor Rating
+                  </div>
+                  <div class="insrtuctor-reviews review-item">
+                    <mat-icon>pages</mat-icon>
+                    747791 Reviews
+                  </div>
+                  <div class="students review-item">
+                    <mat-icon>people</mat-icon>
+                    10292828 Students
+                  </div>
+                  <div class="courses review-item">
+                    <mat-icon>play_circle_filled</mat-icon>
+                    44 Courses
+                  </div>
+                </span>
+    
+              </div>
+              <app-expanable-container>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum perspiciatis incidunt
+                  aliquam
+                  blanditiis labore nemo deserunt. Reprehenderit hic tempora, inventore rerum ut, eos dolore nam
+                  quae,
+                  aliquam laudantium numquam. Sit!
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, ipsam. Atque praesentium nam
+                  veritatis
+                  maiores ipsa sunt corporis, asperiores reprehenderit sed, unde rem accusamus eos perspiciatis
+                  enim at
+                  dolorum magni?
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum perspiciatis incidunt
+                  aliquam
+                  blanditiis labore nemo deserunt. Reprehenderit hic tempora, inventore rerum ut, eos dolore
+                  nam
+                  quae,
+                  aliquam laudantium numquam. Sit!
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, ipsam. Atque praesentium
+                  nam
+                  veritatis
+                  maiores ipsa sunt corporis, asperiores reprehenderit sed, unde rem accusamus eos
+                  perspiciatis
+                  enim at
+                  dolorum magni?
+                </p>
+              </app-expanable-container>
+            </div>
+          </div> -->
+  
+              <!-- <div class="student-feedback-container">
+            <h1>Student feedback</h1>
+    
+            <div class="student-feedback">
+              <div class="left">
+                <h1>4.3</h1>
+                <ngb-rating class="rating" [max]="5" [rate]="3.4"></ngb-rating>
+                <p>Course Rating</p>
+              </div>
+              <div class="right">
+                <div class="review-bar-container">
+                  <div class="5-star student-feedback-stats-item">
+                    <ngb-progressbar type="dark" [height]='"0.5rem"' [value]="25"></ngb-progressbar>
+                    <ngb-rating [max]="5" [rate]="3.4"></ngb-rating>
+                    <div class="link-primary feedback-percentage">25%</div>
+                  </div>
+    
+                  <div class="5-star student-feedback-stats-item">
+                    <ngb-progressbar type="dark" [height]='"0.5rem"' [value]="25"></ngb-progressbar>
+                    <ngb-rating [max]="5" [rate]="3.4"></ngb-rating>
+                    <div class="link-primary feedback-percentage">25%</div>
+                  </div>
+    
+                  <div class="5-star student-feedback-stats-item">
+                    <ngb-progressbar type="dark" [height]='"0.5rem"' [value]="25">
+                    </ngb-progressbar>
+                    <ngb-rating [max]="5" [rate]="3.4"></ngb-rating>
+                    <div class="link-primary feedback-percentage">25%</div>
+                  </div>
+    
+                  <div class="5-star student-feedback-stats-item">
+                    <ngb-progressbar type="dark" [height]='"0.5rem"' [value]="25">
+                    </ngb-progressbar>
+                    <ngb-rating [max]="5" [rate]="3.4"></ngb-rating>
+                    <div class="link-primary feedback-percentage">25%</div>
+                  </div>
+    
+                  <div class="5-star student-feedback-stats-item">
+                    <ngb-progressbar type="dark" [height]='"0.5rem"' [value]="25"></ngb-progressbar>
+                    <ngb-rating [max]="5" [rate]="3.4"></ngb-rating>
+                    <div class="link-primary feedback-percentage">25%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+  
+  
+              <!-- 
+          <div class="reviews-container">
+            <h1>Reviews</h1>
+            <div class="review-list">
+              <div class="review-box">
+                <div class="reviewer-img-container">
+                  <img src="./assets/profile-img.png" alt="" class="rounded-img">
+                </div>
+                <div class="review-detail">
+                  <h3>Name of rree</h3>
+                  <div class="review-rating d-flex align-item-center">
+                    <ngb-rating [max]="5" [rate]="3.4"></ngb-rating>
+                    <p>5 months ago</p>
+                  </div>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint excepturi quisquam cumque doloribus sed.
+                    Velit qui ea ut, adipisci perferendis, commodi nisi nulla illo labore modi soluta nostrum provident
+                    possimus?
+                  </p>
+    
+                  <div class="review-actions">
+                    <p>Was this revies helpful</p>
+                    <div class="review-action-buttons">
+                      <mat-icon>thumb_up_alt</mat-icon>
+                      <mat-icon>thumb_down_alt</mat-icon>
+                      <a href="#">report</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+  
+  <!-- 
+          </div>
+  
+  
+  
+  
+  
+      </div>
+  
+  </div>
+  
+  
+  
+  
+  <router-outlet></router-outlet> -->

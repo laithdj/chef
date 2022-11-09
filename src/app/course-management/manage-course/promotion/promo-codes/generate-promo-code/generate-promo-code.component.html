@@ -1,0 +1,68 @@
+<div class="main-container">
+
+  <div class="sub-header">
+    <!-- Generate Promo Code -->
+   {{formTitle}}
+  </div>
+
+  <div class="main-content">
+    <form [formGroup]='coupenForm'>
+
+      <!-- <p >
+        <mat-form-field appearance="outline" >
+          <mat-label>Channel ID</mat-label>
+          <input formControlName="channel_id" matInput placeholder="Channel ID">
+        </mat-form-field>
+      </p> -->
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Coupen Name</mat-label>
+          <input formControlName="Coupen_name" matInput placeholder="Coupen_name">
+        </mat-form-field>
+      </p>
+
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Discount ($) </mat-label>
+          <input formControlName="discount" matInput placeholder="Discount ($)">
+        </mat-form-field>
+      </p>
+
+      <p>
+            <mat-form-field appearance="outline" >
+                <mat-label >Select for validation</mat-label>
+                  <mat-select formControlName="blacklisted">
+                    <mat-option value=false>Valid</mat-option>
+                 <mat-option value=true>Invalid</mat-option>
+              </mat-select>
+            </mat-form-field>
+     </p>
+
+     <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Expiry Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="Expiry_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+</p>
+<br>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Promo Code</mat-label>
+          <input formControlName="promo_code" matInput placeholder="Promo Code">
+
+        </mat-form-field>
+      </p>
+      <div mat-dialog-actions [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button mat-raised-button color="primary" mat-dialog-close (click)="addCoupen()">{{actionButton}}</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

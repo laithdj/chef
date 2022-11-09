@@ -1,0 +1,53 @@
+<div class="main-container m-auto">
+  <div class="hero-section">
+    <img src="../../assets/hero-img.jpg" alt="heroimg">
+    <div class="hero-card">
+      <h3>Share your Recipe!</h3>
+      Learn from others or share your own favourite meals.
+    </div>
+    <div class="headline-section">
+      <div class="headlin-heading h1 mx-3">
+        A huge slection of high definition cooking courses
+      </div>
+      <div class="headline-details mx-3">
+        Choose from 183,000 online cooking courses with new additions published every month
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="catagories-container p-3 mt-2">
+    <mat-tab-group animationDuration="0ms" [color]="'white'">
+      <mat-tab *ngFor="let h of homeCourses" label="{{h.title}}">
+        <app-catagory-summary [data]="h"></app-catagory-summary>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <!-- first block goes hare  -->
+
+
+  <div class="students-choice-section section-heading h3 mx-3" *ngIf="popularCourses?.length">
+    Students are viewing
+  </div>
+  <div class="students-choice-list" *ngIf="popularCourses?.length">
+    <app-course-list [courses]="popularCourses"></app-course-list>
+  </div>
+
+  <!-- squares block goes here  -->
+
+
+  <h1 class="mx-3 section-heading">Featured</h1>
+  <div class="blocks mx-3">
+
+    <div class="catagory-card" *ngFor="let c of catagories">
+      <img src="{{c.img}}" alt="">
+      <h5 class="catagory-name">{{c.name}}</h5>
+    </div>
+  </div>
+
+
+
+</div>

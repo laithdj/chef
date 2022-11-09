@@ -1,0 +1,14 @@
+<div class="summary-container">
+  <div class="summary-head p-5 pb-1">
+    <div class="head-heading">
+      Expand your career opportunities with {{data?.title}}
+    </div>
+    <div class="head-details">
+      {{data?.description}}
+    </div>
+
+  </div>
+
+  <app-course-list [courses]="data?.courses"></app-course-list>
+
+</div>

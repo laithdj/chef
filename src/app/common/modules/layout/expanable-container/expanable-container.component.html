@@ -1,0 +1,10 @@
+<div class="fileter-list-container">
+  <div [ngClass]="{'filter-list' : !showmore}">
+    <ng-content></ng-content>
+
+  </div>
+
+  <label class="show-more-label" (click)="toggleShowmore()">{{showmore ? 'Show Less' : 'Show More'}}
+    <mat-icon>expand_less</mat-icon>
+  </label>
+</div>

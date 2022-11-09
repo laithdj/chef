@@ -1,0 +1,121 @@
+@import "../shared/genral-style.scss";
+
+.main-container {
+  .main-content {
+    h2 {
+      font-size: large;
+      font-weight: bold;
+    }
+    h3{
+        font-size: medium;
+        font-weight: bold;
+    }
+    .border-container {
+      border: 1px solid rgb(149, 149, 149);
+    }
+
+    .privicy-change-info {
+      display: flex;
+      flex: 1;
+      gap: 1rem;
+      padding: 1rem;
+      p {
+        margin: 0;
+      }
+      margin-bottom: 1.5rem;
+    }
+
+    .spacer {
+      padding: 1.5rem 0.25rem;
+    }
+    .sm-wrap{
+        white-space: nowrap;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .refrel-container {
+        padding: 1.5rem;
+      .link-container {
+        display: flex;
+        flex: 1;
+        gap: 1rem;
+        flex-wrap: wrap;
+        input {
+          flex: 1;
+          outline: 0;
+          padding: 0.5rem 1rem;
+          border: 1px solid black;
+          font-size: large;
+          color: rgb(68, 68, 68);
+          &:focus {
+            outline: 0;
+          }
+        }
+        button {
+          padding: 0.75rem;
+          background-color: transparent;
+          border: 1px solid black;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+    .monthly-coupons{
+        padding: 1.5rem;
+        p{
+            margin: 0;
+        }
+    }
+
+    .active-cupons-container{
+        .active-cupon-heading{
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            a{
+                text-decoration: none;
+                color:  #5624d0;
+            }
+        }
+    }
+
+    .expired-cupons{
+        .expired-cupon-heading{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            h3{
+                margin: 0;
+            }
+
+            .expired-search-input{
+                border: 1px solid black;
+                display: flex;
+                input{
+                    flex: 1;
+                    outline: 0;
+                    border: 0;
+                    padding: 0.25rem 0.5rem;
+                    &:focus{
+                        outline: 0;
+                    }
+                }
+                button{
+                    display: flex;
+                    align-items: center;
+                    // height: 100%;
+                    margin-top: -1px;
+                    background-color: rgb(24, 24, 24);
+                    color: white;
+                    border: 0;
+                    padding: 0.25rem 0.5rem;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
+  }
+}

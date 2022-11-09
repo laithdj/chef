@@ -1,0 +1,136 @@
+@import "../../../../../course-management/manage-course/shared/genral-style.scss";
+
+.subtitle-panel {
+  background-color: #f7f9fa;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  padding-left: 3rem;
+  .subtitle-left {
+    flex: 8;
+    h2 {
+      font-size: x-large;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: large;
+    }
+  }
+  .subtitle-right {
+    flex: 4;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    margin-left: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      // vertical-align: middle;
+      display: block;
+      width: 120px;
+      // aspect-ratio: auto 120 / 90;
+      margin: 0 auto 2.4rem;
+    }
+    div {
+      h2 {
+        font-size: large;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: medium;
+        font-weight: 400;
+        margin: 0;
+        margin-top: 0.75rem;
+      }
+    }
+
+    .article-btn-container {
+      margin-top: 1rem;
+      a {
+        text-decoration: none;
+        color: #1c1d1f;
+        background-color: transparent;
+        border: 1px solid #1c1d1f;
+        display: inline-flex;
+        align-items: center;
+        min-width: 5rem;
+        padding: 0 0.75rem;
+        cursor: pointer;
+        justify-content: center;
+        vertical-align: bottom;
+        white-space: nowrap;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+.main-content {
+  h2{
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  h3{
+    font-size: medium;
+    font-weight: bold;
+  }
+  p{
+    font-size: medium;
+    margin-bottom: 3rem;
+  }
+  ul{
+    margin-bottom: 3rem;
+  }
+  a{
+    color:  #5624d0;
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1100px) {
+  .subtitle-panel {
+    display: block;
+    padding-left: 1.5rem;
+    .subtitle-right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      margin-top: 2rem;
+      text-align: left;
+      padding: 3rem 1.5rem;
+      img {
+        display: none;
+      }
+
+      .article-btn-container {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px)  {
+    .subtitle-panel {
+
+    .subtitle-right {
+      display: block;
+      text-align: center;
+      img {
+        display: block;
+      }
+
+      .article-btn-container {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

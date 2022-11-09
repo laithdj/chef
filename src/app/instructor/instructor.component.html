@@ -1,0 +1,102 @@
+<div class="main-container">
+  <!-- <div *ngIf="toggleMobileMenu"> -->
+    <div class="backdrop" [ngClass]="{ 'backdrop-open' : (toggleMobileMenu) }" (click)="toggleMoblieMenu()">
+    </div>
+  <!-- </div> -->
+  <div class="side-nav-container">
+    <div class="side-nav">
+      <a [routerLink]='["/"]' class="menu-item">
+        <h3 class="mr-1">C</h3>
+        <div class="menu-heading pb-1" style="align-self: center;">hefo Design</div>
+      </a>
+      <a *ngFor="let n of NAVLIST; let i=index;" [routerLink]='n.url' [routerLinkActive]="['activeLink']"
+        (click)="subMenuHandler(i)" class="menu-item">
+        <div class="menu-icon">
+          <mat-icon>{{n.icon}}</mat-icon>
+        </div>
+        <div class="menu-heading">{{n.name}}</div>
+      </a>
+    </div>
+    <div class="side-nav-submenu" *ngIf="NAVLIST[selectedMenuIndex]?.isExpanable">
+      <div *ngFor="let sm of NAVLIST[selectedMenuIndex]?.subOptions" class="sub-menu-heading">
+        <a>{{sm.name}}</a>
+      </div>
+    </div>
+  </div>
+  <div class="m-side-nav-container hide-menu" [ngClass]="{ 'hide-menu-container' : (!toggleMobileMenu) }">
+    <div class="m-side-nav"  [ngClass]="{ 'hide-menu' : (subMenuToggle) }">
+      <a class="m-profile-link d-flex justify-content-between align-items-center pb-1"
+        (click)="toggleMobileSubmenu(0 , true)">
+        <div class="d-flex">
+          <div class="avatar">
+              <img src="/assets/profile-img.png" alt="">
+          </div>
+          <div class="m-profile-name-container">
+            <div class="m-profile-name">
+              Hello, {{loggedUser?.name}}
+            </div>
+            <p>Wellcome back</p>
+          </div>
+        </div>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </a>
+      <a class="menu-option d-flex justify-content-between py-2"
+        *ngFor="let n of getMNavelist(); let i=index;" (click)="toggleMobileSubmenu(i+1 , n.isExpanable)">{{n.name}}
+        <mat-icon *ngIf="n?.isExpanable">keyboard_arrow_right</mat-icon>
+      </a>
+    </div>
+    <div class="m-side-nav-submenu" *ngFor="let n of M_NAVLIST; let i=index;" [ngClass]="{ 'hide-submenu' : (subMenuToggle && subMenuSelectedindex===i ) }">
+      <a class="m-submenu-back-btn d-flex align-items-center mb-2" (click)="closeSubmenu()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        <h5>Profile</h5>
+      </a>
+        <a class="sub-menu-option" *ngFor="let sm of n.subOptions">{{sm.name}}</a>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="header-container">
+      <mat-icon (click)="toggleMoblieMenu()" class="menu-btn">menu</mat-icon>
+      <a href="#" class="role-switch">Student
+        <span class="role-popup">
+          <p>
+            Switch to the student view here - get back to the courses you’re taking.
+          </p>
+        </span>
+      </a>
+      <div class="notification-container pt-2">
+        <mat-icon>notifications_none</mat-icon>
+        <span class="notif-popup">
+          <div class="d-flex justify-content-between p-2" style="border-bottom: 1px solid rgb(0,0,0 , 0.05);">
+            <div>Notifications</div>
+            <mat-icon>settings</mat-icon>
+          </div>
+          <div class="p-4">
+            <div>No notification</div>
+          </div>
+        </span>
+      </div>
+      <div class="header-avatar avatar avatar-popup-container">
+        <img src="/assets/profile-img.png" alt="">
+        <span class="avatar-popup">
+          <a class="d-flex">
+            <div class="avatar">
+              <img src="/assets/profile-img.png" alt="">
+            </div>
+            <span class="ml-1 pt-2">
+              <div> {{loggedUser?.name}} </div>
+              <p> {{loggedUser?.email}} </p>
+            </span>
+          </a>
+          <a (click)="openDialog()" style="cursor: pointer ;">Public Profile</a>
+          <!-- <a href="">Account</a>
+          <a href="">Payout & Tax settings</a> -->
+          <hr>
+          <!-- <a href="">Logout</a> -->
+          <button mat-button (click)="onLogout()">Logout</button>
+        </span>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+    <!-- <app-footer></app-footer> -->
+  </div>
+</div>

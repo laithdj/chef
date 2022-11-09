@@ -1,0 +1,364 @@
+// web interface styles
+.web-header {
+  display: flex;
+  position: relative;
+  z-index: 100;
+  background-color: white;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem 1.4rem;
+  align-items: center;
+
+  box-shadow: 0px 1px 3px 1px rgb(180, 180, 180);
+
+  .h-btn {
+    width: 5rem;
+    padding: 0.6rem 0.4rem;
+    background: transparent;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .i-btn {
+    width: 10rem;
+    padding: 0.6rem 0.4rem;
+    background: transparent;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  .login-btn {
+    border: 2px solid black;
+    color: black;
+  }
+
+  .signup-btn {
+    color: white;
+    border: 2px solid black;
+    background-color: black;
+  }
+}
+
+.catagories {
+  position: relative;
+  cursor: pointer;
+  .list-opener {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 3rem;
+    display: none;
+
+    &:hover {
+      display: block;
+    }
+  }
+  .catgories-container {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 4rem;
+    left: -4rem;
+    box-shadow: 1px 1px 6px #aeaeae;
+
+    .menu {
+      width: 16rem;
+      margin: 0;
+      padding: 1rem 0.5rem;
+
+      &:not(:last-child) {
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    .hide-menu {
+      display: none;
+    }
+    .show-menu {
+      display: block;
+    }
+  }
+}
+
+.catagories {
+  &:hover {
+    .list-opener {
+      display: block;
+    }
+
+    .catgories-container {
+      display: flex;
+    }
+  }
+}
+
+/*
+  mobile screen styles
+*/
+
+.m-header {
+  .header-right {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+::ng-deep .dropdown-menu {
+  width: 30%;
+}
+
+.float-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-heading {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  opacity: 0.7;
+  padding-left: 1rem;
+}
+.m-sidenav {
+  z-index: 10;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 100vh;
+  z-index: 10;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.m-menu {
+  background-color: white;
+  padding: 1rem 0 !important;
+}
+
+.m-links {
+  color: #5624d0 !important;
+}
+
+.m-nav-backbtn {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.5rem;
+
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.m-submenu {
+  z-index: 20;
+}
+
+.m-inner-submenu {
+  z-index: 30;
+}
+
+.m-dsiplay-nav {
+  left: 0;
+}
+
+// genral styles
+
+.instructor-btn{
+  text-decoration: none;
+  color: black;
+}
+
+.divider{
+  background-color:  rgba(0, 0, 0, 0.2);
+  margin: .5rem;
+}
+
+.m-nav-option,
+.catagory-option {
+  padding: 0.3rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.selected-nav-option {
+  color: #5624d0;
+  font-weight: bold;
+}
+
+.transparent-btn {
+  background: transparent;
+  /* margin-top: 0.2rem; */
+  border: none;
+}
+
+.popup {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  display: none;
+}
+
+.popup-open {
+  display: block;
+  opacity: 1;
+}
+
+.backdrop {
+  background-color: rgba(00, 0, 0, 0.5);
+}
+
+.search-container {
+  display: flex;
+  flex: 0.8;
+  border: 1px solid black;
+  margin: 0 1rem;
+  padding: 0.4rem;
+
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.search-container > input {
+  border: none;
+  width: 90%;
+  margin: 0 0.4rem;
+}
+
+.search-container > input:focus {
+  outline: none;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+//
+
+.notification-container:hover {
+  .notif-popup {
+    display: block;
+  }
+}
+
+@mixin popup {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 24%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    right: 1rem;
+    background: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    display: grid;
+  }
+}
+
+.avatar {
+  height: 3.5rem;
+  width: 3.5rem;
+
+  img {
+    object-fit: contain;
+    height: 100%;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+  }
+}
+
+.notif-popup {
+  @include popup;
+  width: 20rem;
+  top: 3.5rem;
+  right: 4rem;
+  padding: 0.6rem;
+}
+
+.avatar-popup {
+  @include popup;
+  width: 18rem;
+  top: 4rem;
+  right: 0.5rem;
+  padding: 1rem;
+  a {
+    display: block;
+    font-size: medium;
+    text-decoration: none;
+    color: black;
+    .avatar {
+      margin-right: 0.5rem;
+    }
+  }
+  a:not(:first-child) {
+    padding: 0.4rem 0.2rem;
+  }
+  hr {
+    opacity: 0.1;
+  }
+  p {
+    font-size: small;
+  }
+}
+
+.avatar-popup-container:hover {
+  .avatar-popup {
+    display: block;
+  }
+}
+
+.m-profile-link {
+  text-decoration: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  .m-profile-name-container {
+    color: black;
+    padding: 0.5rem 0 0 0.5rem;
+    p {
+      font-size: small;
+      padding: 0;
+    }
+
+    .m-profile-name {
+      width: 10rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

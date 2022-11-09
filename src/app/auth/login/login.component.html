@@ -1,0 +1,36 @@
+<div class="main-container d-flex w-100 py-5 justify-content-center align-items-center">
+  <form class="login_container" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h1 class="main_heading">Log in to your account!</h1>
+    <div class="inner_container">
+      <!-- <div class="google_button container_box_shadow">
+
+        <button>
+          <img class="google_icon" src="https://img.icons8.com/color/48/000000/google-logo.png" />
+          Continue with Google
+        </button>
+      </div> -->
+      <div class="email bordered_container">
+        <mat-icon> email</mat-icon>
+        <input formControlName="email" type="email" placeholder="Email" />
+      </div>
+      <div class="password bordered_container">
+        <mat-icon>lock</mat-icon>
+        <input formControlName="password" type="password" placeholder="Password" />
+      </div>
+      <div class="login_button">
+        <button type="submit">Login</button>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <a [routerLink]="['/auth/forgot-password']">Forgot Password</a>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center pt-3">
+        <p>
+            Don't have account
+            <a [routerLink]="'/auth/signup'">Sign Up</a>
+        </p>
+    </div>
+  </form>
+
+</div>

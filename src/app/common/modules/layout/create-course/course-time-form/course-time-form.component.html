@@ -1,0 +1,12 @@
+   <div class="course-time-form">
+     <h1 class="time-form-heading">How much time can you spend creating your course per week?</h1>
+
+     <p class="time-form-description">There's no wrong answer. We can help you achieve your goals even if you don't
+       have much time.</p>
+     <form [formGroup]="timeForm" class="time-input-form">
+       <label><input type="radio" formControlName="time" value="0-2">I’m very busy right now (0-2 hours</label>
+       <label><input type="radio" formControlName="time" value="2-4">>I’ll work on this on the side (2-4 hours)</label>
+       <label><input type="radio" formControlName="time" value="5+">>I have lots of flexibility (5+ hours)</label>
+       <label><input type="radio" formControlName="time" value="NOT_DECIDED">>I haven’t yet decided if I have time</label>
+     </form>
+   </div>

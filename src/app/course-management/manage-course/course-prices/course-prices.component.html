@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="sub-header">
+    Pricing
+  </div>
+  <div class="main-content">
+    <p>Channel price Tier</p>
+    <p>Please select the price tier for your course below and click 'Save'. The list price that students will see in
+      other currencies is determined using the price tier matrix.
+
+      If you intend to offer your course for free, the total length of video content must be less than 2 hours.</p>
+
+    <form>
+      <div class="price-container">
+        <div>
+          <div class="price-controls">
+            <input type="text" value="USD" disabled style="width:auto">
+            <!-- <select>
+              <option value="USD">USD</option>
+              <option value="">GB</option>
+            </select> -->
+
+            <!-- <select>
+              <option>Choose Course</option>
+              <option value="10">10 USD</option>
+              <option value="20">20 USD (week)</option>
+              <option value="30">30 USD (lifetime)</option>
+            </select> -->
+ 
+
+            <input type="text" placeholder="Enter Price" #price value="{{prices}}">
+            <button (click)="savePrice(price.value)">
+              Save
+            </button>
+          </div>
+        </div>
+
+        <div class="controls-warning">
+          <span >
+            <mat-icon class="warning-icon">warning</mat-icon>
+          </span>
+          <span>
+            Please complete the premium instructor application here in order to set a price
+            for your course. You can set
+            your course price as soon as your linked payment method is approved.
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

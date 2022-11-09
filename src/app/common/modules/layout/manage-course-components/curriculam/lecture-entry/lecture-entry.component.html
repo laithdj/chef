@@ -1,0 +1,43 @@
+<div class="lecture-container">
+  <div class="lecture">
+    <div class="lec-head-container">
+      <div class="lec-head-left">
+        <mat-icon>check_circle</mat-icon>
+        <div>Lecture {{position + 1}}</div>
+        <mat-icon>description</mat-icon>
+        <div>{{data.title}}</div>
+      </div>
+      <div class="lec-head-right">
+        <button [ngStyle]="{ 'opacity' : contentToggle ? 0 : 1}" (click)="toggleContent()">
+          <mat-icon>add</mat-icon>Content
+        </button>
+        <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
+        <mat-icon class="lec-del-btn" (click)="deleteLecture()">delete_outline</mat-icon>
+        <mat-icon class="reorder-btn">menu</mat-icon>
+      </div>
+    </div>
+    <div class="lec-content" *ngIf="contentToggle">
+      <div class="lec-content-head">
+        <span>{{data?.filename ? 'Media' : 'Add Video'}}</span>
+        <button>
+          <mat-icon (click)="toggleContent()">close</mat-icon>
+        </button>
+      </div>
+      <div class="content-input-container" *ngIf="! data?.filename">
+        <div>
+          <input type="file" (change)="onFileChange($event)" accept="video/mp4" class="file-input" [disabled]="loading">
+        </div>
+        <button (click)="uploadFile()" [disabled]="!file && loading">Upload file</button>
+      </div>
+      <div class="loading-box" *ngIf="loading">
+        <ngb-progressbar [showValue]="true" [height]="'25px'" type="secondary" [value]="value"></ngb-progressbar>
+      </div>
+      <div class="content-box px-3 d-flex justify-content-between" *ngIf="data?.filename">
+        <div>{{data?.filename}}</div>
+        <button class="media-del-btn">
+          <mat-icon (click)="deleteFile()">delete_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

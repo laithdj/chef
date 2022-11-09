@@ -1,0 +1,19 @@
+@import '../shared/genral-style.scss';
+
+.notif{
+    display: flex;
+    gap: 1rem;
+    border: 1px solid black;
+    padding: 1rem;
+    flex-wrap: wrap;
+
+    mat-icon{
+        display: inline-block;
+    }
+
+    .notif-text{
+        flex: 1;
+        font-weight: bold;
+        min-width: 10rem;
+    }
+}

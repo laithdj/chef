@@ -1,0 +1,49 @@
+  .course-type-form {
+    text-align: center;
+
+    .type-container-heading {
+      font-size: x-large;
+      font-weight: bold;
+      font-family: 'Libre Bodoni', serif;
+
+      margin-bottom: 2rem;
+    }
+
+    .course-type-choices {
+      label {
+        display: block;
+
+        &:nth-child(2) {
+          margin-left: 1.5rem;
+        }
+        input {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+
+          &:checked + span {
+            outline: 4px solid #1c1d1f;
+          }
+        }
+
+        .course-type-container {
+          display: block;
+          width: 14rem;
+          min-height: 18rem;
+          border: 1px solid #d1d7dc;
+          padding: 2.5rem 0.6rem;
+          text-align: center;
+
+          .type-option-icon{
+            margin-bottom: 1rem;
+          }
+
+          .type-option-heading {
+            font-size: medium;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,51 @@
+<div class="main-container d-flex w-100 h-100 justify-content-center align-items-center">
+  <form [formGroup]="signUpform" class="signup_container" (ngSubmit)="signup()">
+    <h1 class="main_heading">Sign Up and Start Learning!</h1>
+    <div class="inner_container">
+
+      <div class="name bordered_container">
+        <mat-icon>person</mat-icon>
+        <input formControlName="name"  type="text" placeholder="Full Name" />   
+      </div>
+      <small [hidden]='name' style="color: red;">Name must be between 3-50 characters</small>
+     
+      <div class="email bordered_container">
+        <mat-icon> email</mat-icon>
+        <input formControlName="email" type="email" placeholder="Email" />
+       
+      </div>
+      <small [hidden]='email' style="color: red;">Email format is not Correct</small>
+    
+
+      <div class="password bordered_container">
+        <mat-icon>lock</mat-icon>
+        <input formControlName="password" type="password" placeholder="Password" #pass/>
+      </div>
+      <small [hidden]='password' style="color: red;">Password must be at least 8 characters</small>
+      <!-- <div class="mailbox_sub_chioce_container">
+        <mat-checkbox [color]="'primary'" id="chk" formControlName="ack">
+          Yes! I want to get the most out of Chefo Design by receiving emails with exclusive deals, personal
+          recommendations
+          and learning tips!
+        </mat-checkbox>
+      </div> -->
+      <div class="signup_button">
+        <button type="submit">Signup</button>
+      </div>
+    </div>
+
+    <div class="t_c_message d-flex justify-content-center align-items-center pt-3">
+      <p>
+        By signing up, you agree to our Terms of Use and Privacy Policy.
+      </p>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center pt-3">
+      <p>
+        Already have account
+        <a [routerLink]="['/auth/login']">Login</a>
+      </p>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>{{data?.title}}</h2>
+<mat-dialog-content class="mat-typography">
+<!--  -->
+<div class="video-container">
+  <video controls (click)="toggleVideo($event)" #videoPlayer>
+    <source [src]="video"
+      type="video/mp4" />
+    Browser not supported
+  </video>
+</div>
+
+<!--  -->
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

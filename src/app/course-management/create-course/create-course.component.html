@@ -1,0 +1,52 @@
+<div class="main-container h-100">
+  <div class="header w-100">
+    <div class="header-content d-flex justify-content-between align-items-center px-4">
+      <div class="d-flex align-items-center h-100">
+        <div class="logo-container d-flex align-items-center h-100">
+          <h1>Chefo Design</h1>
+        </div>
+        <div class="step-count">
+          Step {{stepCount}} of 4
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+    <div class="progress-bar-container">
+      <ngb-progressbar type="dark" [value]="(stepCount/4)*100"></ngb-progressbar>
+    </div>
+  </div>
+
+
+  <div class="main-content">
+
+    <app-course-type-form *ngIf="stepCount===1" [courseType]="courseType" (onTypeChange)="onCourseTypeChange($event)">
+    </app-course-type-form>
+    <app-course-title-form *ngIf="stepCount===2" [courseTitle]="courseTitle"
+      (onTitleChange)="onCourseTitleChange($event)">
+    </app-course-title-form>
+    <app-course-catagory-form *ngIf="stepCount===3" [courseCatagory]="courseCatagory"
+      (onCatagoryChange)="onCourseCatagoryChange($event)">
+    </app-course-catagory-form>
+    <app-course-time-form *ngIf="stepCount===4" [time]="courseTime" (onTimeChange)="onCourseTimeChange($event)">
+    </app-course-time-form>
+
+  </div>
+
+
+
+  <div class="footer d-flex w-100 justify-content-between align-items-center px-4">
+    <div *ngIf="stepCount!==1" class="footer-btn">
+      <button class="brevious-btn" (click)="previousStep()">Previous</button>
+    </div>
+    <div class="spacer" *ngIf="stepCount===1"></div>
+
+
+    <div class="footer-btn" *ngIf="stepCount!==4">
+      <button class="continue-btn" [disabled]="isInvalid()" (click)="nextStep()">Continue</button>
+    </div>
+    <div class="footer-btn" *ngIf="stepCount===4">
+      <button class="continue-btn" (click)="createCourse()">Create</button>
+    </div>
+  </div>
+</div>

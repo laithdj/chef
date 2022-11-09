@@ -1,0 +1,62 @@
+<div class="main-container">
+
+  <div class="sub-header">
+    Promotions
+  </div>
+  
+  <div class="main-content">
+      <!-- just for announcments -->
+      <div class="privicy-change-info border-container d-flex">
+          <mat-icon>info</mat-icon>
+          <p>We have updated the coupon system, and there is more to come. Announcing new free coupon limits and bulk
+            coupon creation. Learn more</p>
+      </div>
+
+
+      <div class="border-container mb-5">
+          <div class="spacer">
+              <div class="refrel-container">
+                  <h2>Refer students</h2>
+                  <p>Any time a student uses this link, we will credit you with the sale. Learn more</p>
+                  <div class="link-container">
+                      <input type="text" name="link" id="link"
+                        value="https://www.udemy.com/course/test">
+                      <button>Copy</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <h2>Coupons</h2>
+      <div class="monthly-coupons border-container mb-5">
+          <h3 class="mt-3">April coupons</h3>
+          <p>You cannot create coupons for a free course</p>
+      </div>
+
+      <div class="active-cupons-container mb-5">
+          <div class="active-cupon-heading sm-wrap">
+              <h3>Active/Scheduled coupons</h3>
+              <a routerLink="promocode">Create multiple cupons</a>
+          </div>
+          <div class="border-container my-2 d-flex justify-content-center align-items-center p-2">
+              No Cupon found
+          </div>
+      </div>
+
+      <div class="expired-cupons">
+          <div class="expired-cupon-heading sm-wrap mb-2">
+            <h3>Expired coupons</h3>
+            <div class="expired-search-input">
+                <input type="text">
+                <button>
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+          </div>
+          <div class="border-container d-flex justify-content-center align-items-center p-2">
+            No cupon found
+          </div>
+      </div>
+<router-outlet></router-outlet>
+  </div>
+</div>
